@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "daisyui": "^4.12.10",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.12",
     "vue": "^3.5.18",
+    "vue-feather-icons": "^5.1.0",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
