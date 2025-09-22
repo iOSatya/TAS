@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  --darker: oklch(20.5% 0 0);
+  --dark: oklch(26.9% 0 0);
+  --secondary: oklch(55.6% 0 0);
+  --light: oklch(92.2% 0 0);
+  --lighter: oklch(97% 0 0);
+}
+
+a {
+  display: block;
+}
