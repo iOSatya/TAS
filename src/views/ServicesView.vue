@@ -8,7 +8,7 @@
       <div class="mt-10 space-y-12">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2">
-            <img src="@/assets/images/cargo-2.jpg" alt="Airfreight Service" class="rounded-lg shadow-lg">
+            <img src="@/assets/images/cargo-4.jpg" alt="Airfreight Service" class="rounded-lg shadow-lg">
           </div>
           <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
             <h3 class="text-2xl font-bold text-gray-900">1. AIRFREIGHT SERVICE</h3>
@@ -17,7 +17,7 @@
         </div>
         <div class="flex flex-col md:flex-row-reverse items-center">
           <div class="md:w-1/2">
-            <img src="@/assets/images/cargo-3.jpg" alt="Project Cargo Handling" class="rounded-lg shadow-lg">
+            <img src="@/assets/images/cargo-2.jpg" alt="Project Cargo Handling" class="rounded-lg shadow-lg">
           </div>
           <div class="md:w-1/2 md:pr-12 mt-8 md:mt-0">
             <h3 class="text-2xl font-bold text-gray-900">2. PROJECT CARGO HANDLING</h3>
@@ -26,7 +26,7 @@
         </div>
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2">
-            <img src="@/assets/images/cargo-1.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
+            <img src="@/assets/images/cargo-3.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
           </div>
           <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
             <h3 class="text-2xl font-bold text-gray-900">3. SEAFREIGHT SERVICES</h3>
@@ -35,7 +35,7 @@
         </div>
         <div class="flex flex-col md:flex-row-reverse items-center">
           <div class="md:w-1/2">
-            <img src="@/assets/images/cargo-1.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
+            <img src="@/assets/images/cargo-6.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
           </div>
           <div class="md:w-1/2 md:pr-12 mt-8 md:mt-0">
             <h3 class="text-2xl font-bold text-gray-900">4. WAREHOUSING AND DISTRIBUTION SERVICES</h3>
@@ -53,7 +53,7 @@
         </div>
         <div class="flex flex-col md:flex-row-reverse items-center">
           <div class="md:w-1/2">
-            <img src="@/assets/images/cargo-1.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
+            <img src="@/assets/images/cargo-5.jpg" alt="Seafreight Services" class="rounded-lg shadow-lg">
           </div>
           <div class="md:w-1/2 md:pr-12 mt-8 md:mt-0">
             <h3 class="text-2xl font-bold text-gray-900">6. LAND TRANSPORTATION</h3>
