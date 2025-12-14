@@ -2,7 +2,7 @@
   <div>
     <div class="relative bg-gray-900">
       <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="@/assets/images/cargo-1.jpg" alt="Cargo Image">
+        <img class="w-full h-full object-cover object-[0%_75%]" src="@/assets/images/caricature-2.png" alt="Cargo Image">
         <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
       </div>
       <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
