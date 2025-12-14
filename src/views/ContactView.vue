@@ -1,46 +1,92 @@
 <template>
-  <div class="bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contact Us</h2>
-        <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">We'd love to hear from you. Here's how you can reach us.</p>
+  <div class="bg-slate-50 min-h-screen">
+    
+    <div class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Contact Us</h1>
+        <p class="mt-4 text-lg text-slate-500">We'd love to hear from you. Reach out to our team directly.</p>
       </div>
+    </div>
 
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Our Address</h3>
-            <p class="mt-2 text-gray-500">Jalan Teluk Sarera Selatan No. 8 RT. 011 RW. 004 Kelurahan Perak Utara, Kecamatan Pabean Cantian, Surabaya, 60165</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        
+        <div class="space-y-6">
+          
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-bold text-slate-900">Head Office</h3>
+                <p class="mt-2 text-slate-600 leading-relaxed">
+                  Jalan Teluk Sarera Selatan No. 8<br>
+                  RT. 011 RW. 004 Kelurahan Perak Utara,<br>
+                  Kecamatan Pabean Cantian,<br>
+                  Surabaya, 60165
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Contact Details</h3>
-            <p class="mt-2 text-gray-500"><b>Phone:</b> 031-3281470 (Hunting), 99096131</p>
-            <p class="mt-1 text-gray-500"><b>Fax:</b> 031-3294482</p>
-            <p class="mt-1 text-gray-500"><b>E-Mail:</b> csv.tassby@gmail.com</p>
+
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-6 border-b border-slate-100 pb-2">Get in Touch</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-slate-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <div>
+                  <span class="block text-sm text-slate-500">Phone (Hunting)</span>
+                  <span class="text-slate-900 font-medium">031-3281470, 99096131</span>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-slate-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                <div>
+                  <span class="block text-sm text-slate-500">Fax</span>
+                  <span class="text-slate-900 font-medium">031-3294482</span>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-slate-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <div>
+                  <span class="block text-sm text-slate-500">Email</span>
+                  <a href="mailto:csv.tassby@gmail.com" class="text-blue-600 font-medium hover:underline">csv.tassby@gmail.com</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Legal Information</h3>
-            <p class="mt-2 text-gray-500"><b>Tax Number/NPWP:</b> 21.115.067.7-614.000</p>
-            <p class="mt-1 text-gray-500"><b>Nomor Identitas Kepabeanan (NIK):</b> 03.028599 DD. 28 Desember 2011</p>
+
+          <div class="bg-blue-50 rounded-xl shadow-sm border border-blue-100 p-8">
+            <h3 class="text-lg font-bold text-blue-900 mb-4">Legal Information</h3>
+            <div class="space-y-2 text-sm text-blue-800">
+              <p><span class="font-semibold">NPWP:</span> 21.115.067.7-614.000</p>
+              <p><span class="font-semibold">NIK (Customs ID):</span> 03.028599 (DD. 28 Dec 2011)</p>
+            </div>
           </div>
+
         </div>
 
-        <div>
+        <div class="h-full min-h-[500px] bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden relative">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.973785236231!2d112.7283223147749!3d-7.24421699477057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9e8a936d0c9%3A0x23b88a76f5f36931!2sJalan%20Teluk%20Sarera%20Selatan%20No.8%2C%20Perak%20Utara%2C%20Kec.%20Pabean%20Cantian%2C%20Kota%20SBY%2C%20Jawa%20Timur%2060165!5e0!3m2!1sen!2sid!4v1678886400000!5m2!1sen!2sid" 
+            src="https://maps.google.com/maps?q=Jalan%20Teluk%20Sarera%20Selatan%20No.%208%20Surabaya&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%" 
-            height="450" 
+            height="100%" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+            class="absolute inset-0 w-full h-full"
+          >
           </iframe>
         </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-
 </script>
