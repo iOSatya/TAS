@@ -12,11 +12,11 @@
           </div>
 
           <div class="hidden lg:flex flex-col items-center justify-center select-none">
-             <h1 class="text-xl font-extrabold text-slate-900 tracking-tight leading-none font-sans">
-               PT. TRANSPORT
+             <h1 class="text-xl xl:text-2xl font-extrabold text-[#5d5c8d] tracking-tight leading-none font-sans uppercase">
+               PT. Transport Anugerah Sakti
              </h1>
-             <span class="text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mt-0.5">
-               Anugerah Sakti
+             <span class="text-[0.65rem] font-bold text-[#b47d7d] tracking-widest uppercase mt-1 transform scale-x-105">
+               International Freight Forwarding & Customs Brokerage
              </span>
           </div>
 
@@ -31,8 +31,7 @@
                   <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left" :class="{ 'scale-x-100': $route.name === item.route }"></span>
                 </RouterLink>
              </template>
-             
-             </div>
+          </div>
 
           <div class="flex items-center md:hidden">
             <button @click="isOpen = !isOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
@@ -70,7 +69,7 @@
             </template>
             <div class="pt-4 mt-4 border-t border-gray-100">
                <RouterLink :to="{ name: 'contact' }" @click="isOpen = false" class="block w-full text-center px-5 py-4 rounded-lg bg-blue-600 text-white text-base font-bold shadow hover:bg-blue-700 transition-colors">
-                  Request Quote
+                 Request Quote
                </RouterLink>
             </div>
           </div>
