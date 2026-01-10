@@ -61,5 +61,37 @@
       </div>
 
     </div>
+
+    <div class="relative w-full h-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
+      <div class="absolute bottom-0 w-full h-1 bg-slate-200"></div>
+      
+      <div class="truck-animation absolute bottom-1">
+        <svg class="w-16 h-16 text-blue-600 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+           <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        <div class="absolute top-2 -left-4 space-y-1">
+           <div class="w-4 h-0.5 bg-slate-300 rounded-full"></div>
+           <div class="w-6 h-0.5 bg-slate-300 rounded-full ml-2"></div>
+           <div class="w-3 h-0.5 bg-slate-300 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
+
+<style scoped>
+.truck-animation {
+  animation: drive-truck 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes drive-truck {
+  0% {
+    transform: translateX(-150px); /* Start off-screen left */
+  }
+  100% {
+    transform: translateX(100vw); /* Move to off-screen right */
+  }
+}
+</style>
