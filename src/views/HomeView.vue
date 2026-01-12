@@ -8,16 +8,20 @@
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
       
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center lg:flex-row lg:justify-between lg:items-start pt-20 lg:pt-32 pb-20">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center lg:flex-row lg:justify-between lg:items-start pt-20 lg:pt-8 pb-20">
         
         <div class="w-full lg:max-w-xl mb-8 lg:mb-0 text-center lg:text-left">
-           <!-- <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">
-             Global Logistics
-           </h1> -->
-           <p class="text-xl text-gray-100 font-medium leading-relaxed drop-shadow-lg">
-             Your Trusted Partner in Freight Forwarding and Logistics Solutions.
-             Connecting your business to the world with speed and reliability.
-           </p>
+        <!-- <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-7xl mb-6">
+          PT. Transport <br class="hidden sm:block" />
+          <span class="text-blue-400">Anugerah Sakti</span>
+        </h1> -->
+          <p class="text-3xl text-blue-600 font-bold leading-relaxed drop-shadow-lg drop-shadow-neutral-50">
+            PT. Transport Anugerah Sakti
+          </p>
+          <p class="text-xl text-gray-100 font-medium leading-relaxed drop-shadow-lg">
+            Your Trusted Partner in Freight Forwarding and Logistics Solutions.
+            Connecting your business to the world with speed and reliability.
+          </p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-end">
