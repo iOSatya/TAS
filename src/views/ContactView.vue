@@ -60,12 +60,22 @@
           </div>
 
           <div class="bg-blue-50 rounded-xl shadow-sm border border-blue-100 p-8">
-            <h3 class="text-lg font-bold text-blue-900 mb-4">Legal Information</h3>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-blue-900">Legal Information</h3>
+              <button
+                @click="showLegalModal = true"
+                class="text-sm font-medium text-blue-700 hover:text-blue-900 hover:underline"
+              >
+                More
+              </button>
+            </div>
+          
             <div class="space-y-2 text-sm text-blue-800">
               <p><span class="font-semibold">NPWP:</span> 21.115.067.7-614.000</p>
               <p><span class="font-semibold">NIK (Customs ID):</span> 03.028599 (DD. 28 Dec 2011)</p>
             </div>
           </div>
+
 
         </div>
 
@@ -86,7 +96,50 @@
       </div>
     </div>
   </div>
+
+  <!-- Legal Information Modal -->
+  <div v-if="showLegalModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 p-6 relative">
+
+      <!-- Close button -->
+      <button
+        @click="showLegalModal = false"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+      >
+        ✕
+      </button>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-4">
+        Legal Information
+      </h3>
+
+      <div class="space-y-3 text-sm text-slate-700">
+        <p><span class="font-semibold">Company Name:</span> PT TRANSPORT ANUGERAH SAKTI</p>
+        <p><span class="font-semibold">NPWP:</span> 21.115.067.7-614.000</p>
+        <p><span class="font-semibold">NIK (Customs ID):</span> 03.028599</p>
+        <p><span class="font-semibold">Issued Date:</span> 28 December 2011</p>
+        <p><span class="font-semibold">Business Field:</span> Freight Forwarding & Logistics</p>
+        <p><span class="font-semibold">Registered Address:</span><br>
+          Jalan Teluk Sarera Selatan No. 8,<br>
+          Surabaya, 60165
+        </p>
+      </div>
+
+      <div class="mt-6 text-right">
+        <button
+          @click="showLegalModal = false"
+          class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const showLegalModal = ref(false)
 </script>

@@ -1,28 +1,34 @@
 <template>
   <div class="flex flex-col min-h-screen">
     
-    <div class="relative bg-slate-900">
+    <div class="relative bg-slate-900 h-auto min-h-[600px] lg:h-[80vh]">
+      
       <div class="absolute inset-0">
         <img class="w-full h-full object-cover" src="@/assets/images/caricature-2.png" alt="Global Shipping">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
       </div>
-      <div class="relative max-w-7xl mx-auto py-32 px-4 sm:px-6 lg:px-8 flex flex-col justify-center h-full">
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-7xl mb-6 shadow-sm">
-          PT. Transport <br class="hidden sm:block" />
-          <span class="text-blue-400">Anugerah Sakti</span>
-        </h1>
-        <p class="mt-4 text-xl text-gray-200 max-w-3xl leading-relaxed">
-          Your Trusted Partner in Freight Forwarding and Logistics Solutions.
-          Connecting your business to the world with speed and reliability.
-        </p>
-        <div class="mt-10 flex gap-4">
-          <RouterLink :to="{ name: 'contact' }" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 md:text-lg transition-colors shadow-lg shadow-blue-900/50">
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center lg:flex-row lg:justify-between lg:items-start pt-20 lg:pt-32 pb-20">
+        
+        <div class="w-full lg:max-w-xl mb-8 lg:mb-0 text-center lg:text-left">
+           <!-- <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">
+             Global Logistics
+           </h1> -->
+           <p class="text-xl text-gray-100 font-medium leading-relaxed drop-shadow-lg">
+             Your Trusted Partner in Freight Forwarding and Logistics Solutions.
+             Connecting your business to the world with speed and reliability.
+           </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-end">
+          <RouterLink :to="{ name: 'contact' }" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 md:text-lg transition-colors shadow-lg">
             Get a Quote
           </RouterLink>
-          <RouterLink :to="{ name: 'services' }" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 text-base font-medium rounded-lg text-white hover:bg-white/10 md:text-lg transition-colors backdrop-blur-sm">
+          <RouterLink :to="{ name: 'services' }" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white/70 text-base font-medium rounded-lg text-white hover:bg-white/20 md:text-lg transition-colors backdrop-blur-sm shadow-lg">
             Our Services
           </RouterLink>
         </div>
+
       </div>
     </div>
 
@@ -112,7 +118,7 @@
         
         <div class="mt-16 text-center">
              <RouterLink :to="{ name: 'services' }" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center justify-center gap-2">
-                View All Services Details <span>&rarr;</span>
+               View All Services Details <span>&rarr;</span>
              </RouterLink>
         </div>
       </div>
