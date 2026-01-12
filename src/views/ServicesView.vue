@@ -128,5 +128,39 @@
       </div>
     </div>
 
+    <div class="relative w-full h-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
+      <div class="absolute bottom-0 w-full h-1 bg-slate-200"></div>
+    
+      <div class="forklift-animation absolute bottom-1">
+        <img src="@/assets/images/forklift.svg" alt="Forklift" class="h-14 w-auto drop-shadow-sm"/>
+      
+        <div class="absolute top-4 -left-6 space-y-1">
+          <div class="w-4 h-0.5 bg-slate-300 rounded-full"></div>
+          <div class="w-6 h-0.5 bg-slate-300 rounded-full ml-2"></div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </template>
+
+<style scoped>
+
+.forklift-animation {
+  animation: drive-forklift 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes drive-forklift {
+  from {
+    transform: translateX(-180px);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+</style>
+
