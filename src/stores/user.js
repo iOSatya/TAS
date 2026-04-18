@@ -6,6 +6,7 @@ export const useUserStore = defineStore('user', () => {
   const user = ref(null)
   const token = ref(localStorage.getItem('token') || null)
   const isAuthenticated = computed(() => !!token.value)
+  const isAdmin = computed(() => user.value?.is_admin || false)
 
   function setToken(newToken) {
     token.value = newToken
@@ -18,12 +19,17 @@ export const useUserStore = defineStore('user', () => {
 
   function setUser(userData) {
     user.value = userData
+    if (userData?.is_admin !== undefined) {
+      localStorage.setItem('user_is_admin', userData.is_admin.toString())
+    } else if (userData === null) {
+      localStorage.removeItem('user_is_admin')
+    }
   }
 
   async function register(credentials) {
     try {
       const data = await authAPI.register(credentials)
-      setToken(data.token || data.access_token)
+      setToken(data.access_token || data.token)
       setUser(data.user)
       return { success: true, data }
     } catch (error) {
@@ -34,7 +40,7 @@ export const useUserStore = defineStore('user', () => {
   async function login(credentials) {
     try {
       const data = await authAPI.login(credentials)
-      setToken(data.token || data.access_token)
+      setToken(data.access_token || data.token)
       setUser(data.user)
       return { success: true, data }
     } catch (error) {
@@ -84,10 +90,11 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
-  return {
+   return {
     user,
     token,
     isAuthenticated,
+    isAdmin,
     register,
     login,
     logout,

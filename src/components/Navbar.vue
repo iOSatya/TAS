@@ -105,6 +105,9 @@ const navItems = computed(() => {
   ];
   if (userStore.isAuthenticated) {
     items.push({ name: 'Profile', route: 'profile' });
+    if (userStore.isAdmin) {
+      items.push({ name: 'Admin', route: 'admin' });
+    }
   } else {
     items.push({ name: 'Register', route: 'register' });
     items.push({ name: 'Login', route: 'login' });

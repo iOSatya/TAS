@@ -6,6 +6,7 @@ import ContactView from "../views/ContactView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import LoginView from "../views/LoginView.vue";
 import ProfileView from "../views/ProfileView.vue";
+import AdminView from "../views/AdminView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,12 @@ const router = createRouter({
       name: "profile",
       component: ProfileView,
     },
+    {
+      path: "/admin",
+      name: "admin",
+      component: AdminView,
+      meta: { requiresAdmin: true },
+    },
   ],
 });
 
@@ -56,6 +63,13 @@ router.beforeEach((to, from, next) => {
     next({ name: 'login' });
   } else if (token && (to.name === 'login' || to.name === 'register')) {
     next({ name: 'profile' });
+  } else if (token && to.meta?.requiresAdmin) {
+    const isAdmin = localStorage.getItem('user_is_admin') === 'true';
+    if (!isAdmin) {
+      next({ name: 'profile' });
+      return;
+    }
+    next();
   } else {
     next();
   }

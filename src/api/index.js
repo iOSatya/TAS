@@ -73,3 +73,60 @@ export const authAPI = {
     })
   }
 }
+
+export const adminAPI = {
+  getUsers(token, query = {}) {
+    const params = new URLSearchParams()
+    if (query.search) params.set('search', query.search)
+    if (query.is_admin !== undefined) params.set('is_admin', query.is_admin)
+    if (query.page) params.set('page', query.page)
+    if (query.per_page) params.set('per_page', query.per_page)
+    const queryString = params.toString() ? `?${params.toString()}` : ''
+    return request(`/admin/users${queryString}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+  },
+
+  getUser(token, userId) {
+    return request(`/admin/users/${userId}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+  },
+
+  createUser(token, userData) {
+    return request('/admin/users', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify(userData)
+    })
+  },
+
+  updateUser(token, userId, userData) {
+    return request(`/admin/users/${userId}`, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify(userData)
+    })
+  },
+
+  deleteUser(token, userId) {
+    return request(`/admin/users/${userId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+  },
+
+  resetPassword(token, userId) {
+    return request(`/admin/users/${userId}/reset-password`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+  },
+
+  toggleAdminStatus(token, userId) {
+    return request(`/admin/users/${userId}/admin-status`, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+  }
+}
