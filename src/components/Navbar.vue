@@ -20,18 +20,21 @@
              </span>
           </div>
 
-          <div class="hidden md:flex md:items-center md:space-x-8">
-             <template v-for="item in navItems" :key="item.name">
-                <RouterLink 
-                  :to="{ name: item.route }" 
-                  class="relative py-2 text-sm font-bold tracking-wide text-gray-600 hover:text-blue-700 transition-colors duration-200 group uppercase"
-                  active-class="text-blue-700"
-                >
-                  {{ item.name }}
-                  <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left" :class="{ 'scale-x-100': $route.name === item.route }"></span>
-                </RouterLink>
-             </template>
-          </div>
+           <div class="hidden md:flex md:items-center md:space-x-8">
+              <template v-for="item in navItems" :key="item.name">
+                 <RouterLink 
+                   :to="{ name: item.route }" 
+                   class="relative py-2 text-sm font-bold tracking-wide text-gray-600 hover:text-blue-700 transition-colors duration-200 group uppercase"
+                   active-class="text-blue-700"
+                 >
+                   {{ item.name }}
+                   <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left" :class="{ 'scale-x-100': $route.name === item.route }"></span>
+                 </RouterLink>
+              </template>
+              <button v-if="userStore.isAuthenticated" @click="logout" class="py-2 text-sm font-bold tracking-wide text-red-600 hover:text-red-700 transition-colors duration-200 uppercase">
+                Logout
+              </button>
+           </div>
 
           <div class="flex items-center md:hidden">
             <button @click="isOpen = !isOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
@@ -67,11 +70,16 @@
                 {{ item.name }}
               </RouterLink>
             </template>
-            <div class="pt-4 mt-4 border-t border-gray-100">
-               <RouterLink :to="{ name: 'contact' }" @click="isOpen = false" class="block w-full text-center px-5 py-4 rounded-lg bg-blue-600 text-white text-base font-bold shadow hover:bg-blue-700 transition-colors">
-                 Request Quote
-               </RouterLink>
-            </div>
+             <div v-if="userStore.isAuthenticated" class="pt-4 mt-4 border-t border-gray-100">
+                <button @click="logout; isOpen = false" class="block w-full text-center px-5 py-4 rounded-lg bg-red-600 text-white text-base font-bold shadow hover:bg-red-700 transition-colors">
+                  Logout
+                </button>
+             </div>
+             <div class="pt-4 mt-4 border-t border-gray-100">
+                <RouterLink :to="{ name: 'contact' }" @click="isOpen = false" class="block w-full text-center px-5 py-4 rounded-lg bg-blue-600 text-white text-base font-bold shadow hover:bg-blue-700 transition-colors">
+                  Request Quote
+                </RouterLink>
+             </div>
           </div>
         </div>
       </transition>
@@ -80,14 +88,32 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/stores/user';
 
 const isOpen = ref(false);
+const userStore = useUserStore();
+const router = useRouter();
 
-const navItems = [
-  { name: 'Home', route: 'home' },
-  { name: 'Services', route: 'services' },
-  { name: 'About', route: 'about' },
-  { name: 'Contact', route: 'contact' },
-];
+const navItems = computed(() => {
+  const items = [
+    { name: 'Home', route: 'home' },
+    { name: 'Services', route: 'services' },
+    { name: 'About', route: 'about' },
+    { name: 'Contact', route: 'contact' },
+  ];
+  if (userStore.isAuthenticated) {
+    items.push({ name: 'Profile', route: 'profile' });
+  } else {
+    items.push({ name: 'Register', route: 'register' });
+    items.push({ name: 'Login', route: 'login' });
+  }
+  return items;
+});
+
+async function logout() {
+  await userStore.logout();
+  router.push('/');
+}
 </script>
