@@ -7,12 +7,12 @@
           
           <div class="flex-shrink-0 flex items-center">
             <RouterLink :to="{ name: 'home' }" class="flex items-center gap-2 group">
-              <img src="@/assets/images/logo.jpg" alt="TAS Logo" class="h-10 w-auto sm:h-12 object-contain transition-transform duration-300 group-hover:scale-105" />
+               <img src="@/assets/images/logo.jpg" alt="TAS Logo" class="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105" />
             </RouterLink>
           </div>
 
-          <div class="hidden lg:flex flex-col items-center justify-center select-none">
-             <h1 class="text-xl xl:text-2xl font-extrabold text-[#5d5c8d] tracking-tight leading-none font-sans uppercase">
+          <div class="hidden lg:flex flex-col items-center justify-center select-none whitespace-nowrap">
+              <h1 class="text-lg xl:text-xl font-extrabold text-[#5d5c8d] tracking-tight leading-none font-sans uppercase">
                PT. Transport Anugerah Sakti
              </h1>
              <span class="text-[0.65rem] font-bold text-[#b47d7d] tracking-widest uppercase mt-1 transform scale-x-105">
@@ -20,18 +20,18 @@
              </span>
           </div>
 
-           <div class="hidden md:flex md:items-center md:space-x-8">
+           <div class="hidden md:flex md:items-center md:space-x-6">
               <template v-for="item in navItems" :key="item.name">
                  <RouterLink 
                    :to="{ name: item.route }" 
-                   class="relative py-2 text-sm font-bold tracking-wide text-gray-600 hover:text-blue-700 transition-colors duration-200 group uppercase"
+                    class="relative py-2 text-xs lg:text-sm font-bold tracking-normal text-gray-600 hover:text-blue-700 transition-colors duration-200 group uppercase"
                    active-class="text-blue-700"
                  >
                    {{ item.name }}
                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left" :class="{ 'scale-x-100': $route.name === item.route }"></span>
                  </RouterLink>
               </template>
-              <button v-if="userStore.isAuthenticated" @click="logout" class="py-2 text-sm font-bold tracking-wide text-red-600 hover:text-red-700 transition-colors duration-200 uppercase">
+               <button v-if="userStore.isAuthenticated" @click="logout" class="py-2 text-xs lg:text-sm font-bold tracking-normal text-red-600 hover:text-red-700 transition-colors duration-200 uppercase">
                 Logout
               </button>
            </div>
