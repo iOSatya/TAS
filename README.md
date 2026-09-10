@@ -1,29 +1,29 @@
-# TAS
+# TAS — Website Company Profile PT. Transport Anugerah Sakti
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend website company profile PT. Transport Anugerah Sakti.
+Dibangun dengan **Vue 3** (Vite) + **Tailwind CSS 4** + **Pinia** + **Vue Router**.
 
-## Recommended IDE Setup
+## Menjalankan (development)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. `npm install`
+2. (Opsional) salin `.env.example` → `.env.local` dan sesuaikan `VITE_API_BASE` bila backend berjalan di alamat lain.
+3. `npm run dev`
 
-## Customize configuration
+Fitur autentikasi (Login, Register, Profile, Admin) memerlukan backend Laravel
+(`TAS_Backend`) berjalan di `http://localhost:8000` — jalankan `php artisan serve` pada repo backend.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
+## Build produksi
 
 ```sh
 npm run build
 ```
+
+Hasil build ada di `dist/` (Vercel mendeteksi otomatis sebagai proyek Vite).
+
+## Struktur
+
+- `src/views/` — halaman publik (Home, Services, About, Contact) dan halaman autentikasi (Login, Register, Profile, Admin)
+- `src/components/` — Navbar & Footer
+- `src/api/` — klien REST API
+- `src/stores/` — state management (Pinia)
+- `public/` — aset statis (favicon, robots.txt, sitemap.xml)

@@ -71,8 +71,8 @@
             </div>
           
             <div class="space-y-2 text-sm text-blue-800">
-              <p><span class="font-semibold">NPWP:</span> 21.115.067.7-614.000</p>
-              <p><span class="font-semibold">NIK (Customs ID):</span> 03.028599 (DD. 28 Dec 2011)</p>
+              <p><span class="font-semibold">NPWP:</span> 021.115.067.7-614.000</p>
+              <p><span class="font-semibold">NIB:</span> 81200122118930002</p>
             </div>
           </div>
 
@@ -113,15 +113,9 @@
         Legal Information
       </h3>
 
-      <div class="space-y-3 text-sm text-slate-700">
-        <p><span class="font-semibold">Company Name:</span> PT TRANSPORT ANUGERAH SAKTI</p>
-        <p><span class="font-semibold">NPWP:</span> 21.115.067.7-614.000</p>
-        <p><span class="font-semibold">NIK (Customs ID):</span> 03.028599</p>
-        <p><span class="font-semibold">Issued Date:</span> 28 December 2011</p>
-        <p><span class="font-semibold">Business Field:</span> Freight Forwarding & Logistics</p>
-        <p><span class="font-semibold">Registered Address:</span><br>
-          Jalan Teluk Sarera Selatan No. 8,<br>
-          Surabaya, 60165
+      <div class="space-y-3 text-sm text-slate-700 max-h-[70vh] overflow-y-auto pr-1">
+        <p v-for="item in legalItems" :key="item.label">
+          <span class="font-semibold">{{ item.label }}:</span> {{ item.value }}
         </p>
       </div>
 
@@ -142,4 +136,19 @@
 import { ref } from 'vue'
 
 const showLegalModal = ref(false)
+
+const legalItems = [
+  { label: 'NIK (Customs ID)', value: '03.028599' },
+  { label: 'Akte Perusahaan Nomor', value: '4 Tahun 2009' },
+  { label: 'SK Pengesahan Badan Hukum Perseroan Nomor', value: 'AHU-06051.AH.01.01.Tahun 2009' },
+  { label: 'SIUJPT Nomor', value: 'P2T/23/06.46/VIII/2018' },
+  { label: 'Tanda Daftar Perusahaan Nomor', value: '13.01.1.52.23732' },
+  { label: 'ALFI/ILFA Member Nomor', value: '1.1010.N.A' },
+  { label: 'KTA ORGANDA JATIM Nomor', value: '129' },
+  { label: 'Surat Keterangan Terdaftar Nomor', value: 'S-1237KT/WPJ.11/KP.0303/2018' },
+  { label: 'SPPKP Nomor', value: 'S-163PKP/WPJ.11/KP.0303/2018' },
+  { label: 'Sertifikat Kepesertaan BPJS Nomor', value: '22194351' },
+  { label: 'Surat Keterangan Domisili Nomor', value: '500.3/110/436.9.16.4/2025' },
+  { label: 'Sertifikat Ahli Kepabeanan Nomor', value: '4293/DAK/BC/2006' },
+]
 </script>

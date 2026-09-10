@@ -66,7 +66,7 @@
       <div class="absolute bottom-0 w-full h-1 bg-slate-200"></div>
       
       <div class="truck-animation absolute bottom-1">
-        <img src="@/assets/images/truck.svg" alt="Forklift" class="h-14 w-auto drop-shadow-sm"/>
+        <img src="@/assets/images/truck.svg" alt="Truk" class="h-14 w-auto drop-shadow-sm"/>
         <div class="absolute top-2 -left-4 space-y-1">
            <div class="w-4 h-0.5 bg-slate-300 rounded-full"></div>
            <div class="w-6 h-0.5 bg-slate-300 rounded-full ml-2"></div>
