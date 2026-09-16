@@ -215,6 +215,45 @@
         </form>
       </div>
     </div>
+
+    <!-- Reset Password Result Modal -->
+    <div v-if="resetInfo" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-900">Password Reset Successful</h3>
+          <button @click="closeResetModal" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-gray-600 text-sm mb-4">
+          Temporary password for
+          <span class="font-semibold text-gray-900">{{ resetInfo.email || 'the selected user' }}</span>.
+          Copy this password and give it to the account owner; it is only shown here.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <code class="flex-1 px-4 py-3 bg-gray-100 border border-gray-200 rounded-lg text-gray-900 font-mono text-sm break-all">{{ resetInfo.password }}</code>
+          <button
+            @click="copyResetPassword"
+            class="px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+          >
+            {{ copied ? 'Copied' : 'Copy' }}
+          </button>
+        </div>
+
+        <div class="mt-6 text-right">
+          <button
+            @click="closeResetModal"
+            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -231,6 +270,9 @@ const adminFilter = ref('')
 const showCreateModal = ref(false)
 const createLoading = ref(false)
 const createError = ref('')
+
+const resetInfo = ref(null)
+const copied = ref(false)
 
 const newUser = reactive({
   name: '',
@@ -270,12 +312,59 @@ function nextPage() {
 }
 
 async function resetPassword(userId) {
-  if (!confirm('Are you sure you want to reset this user\'s password? A new temporary password will be generated.')) return
+  const target = adminStore.users.find(u => u.id === userId)
+  const label = target ? `${target.name} (${target.email})` : 'this user'
+  if (!confirm(`Are you sure you want to reset the password for ${label}? A new temporary password will be generated.`)) return
   const result = await adminStore.resetPassword(userId)
   if (result.success) {
-    alert('Password reset successful. The user will receive an email with the new password.')
+    resetInfo.value = {
+      email: result.data?.user?.email || target?.email || '',
+      password: result.data?.new_password || ''
+    }
+    copied.value = false
   } else {
     alert(`Failed to reset password: ${result.error}`)
+  }
+}
+
+function closeResetModal() {
+  resetInfo.value = null
+  copied.value = false
+}
+
+async function copyResetPassword() {
+  const text = resetInfo.value?.password
+  if (!text) return
+
+  let ok = false
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text)
+      ok = true
+    }
+  } catch (err) {
+    ok = false
+  }
+
+  if (!ok) {
+    try {
+      const area = document.createElement('textarea')
+      area.value = text
+      area.setAttribute('readonly', '')
+      area.style.position = 'fixed'
+      area.style.top = '-1000px'
+      document.body.appendChild(area)
+      area.select()
+      ok = document.execCommand('copy')
+      document.body.removeChild(area)
+    } catch (err) {
+      ok = false
+    }
+  }
+
+  copied.value = ok
+  if (ok) {
+    setTimeout(() => { copied.value = false }, 2000)
   }
 }
 

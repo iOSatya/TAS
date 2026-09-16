@@ -61,7 +61,7 @@
           </div>
 
           <div v-if="success" class="p-4 bg-green-50 border border-green-200 rounded-lg">
-            <p class="text-green-700 text-sm">Registration successful! Redirecting to login...</p>
+            <p class="text-green-700 text-sm">Registration successful! Redirecting to your profile...</p>
           </div>
 
           <button
