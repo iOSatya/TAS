@@ -136,7 +136,7 @@
     </div>
 
     <!-- Create User Modal -->
-    <div v-if="showCreateModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div v-if="showCreateModal" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-xl font-bold text-gray-900">Create New User</h3>
@@ -217,7 +217,7 @@
     </div>
 
     <!-- Reset Password Result Modal -->
-    <div v-if="resetInfo" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div v-if="resetInfo" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-xl font-bold text-gray-900">Password Reset Successful</h3>

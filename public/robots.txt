@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# GANTI dengan URL produksi Vercel yang sebenarnya
-Sitemap: https://tas-company-profile.vercel.app/sitemap.xml
+Sitemap: https://transportanugerahsakti.com/sitemap.xml

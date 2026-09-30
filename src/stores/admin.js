@@ -31,11 +31,14 @@ export const useAdminStore = defineStore('admin', () => {
         per_page: query.per_page || pagination.value.limit 
       })
       users.value = data.data || []
-      if (data.meta) {
-        pagination.value.page = data.meta.current_page
-        pagination.value.total = data.meta.total
-        pagination.value.pages = data.meta.last_page
-        pagination.value.limit = data.meta.per_page
+      // Laravel mengembalikan paginator mentah (field di level atas);
+      // bentuk { data, meta } hanya berlaku bila backend memakai Resource Collection.
+      const meta = data.meta ?? data
+      if (meta && meta.current_page) {
+        pagination.value.page = meta.current_page
+        pagination.value.total = meta.total
+        pagination.value.pages = meta.last_page
+        pagination.value.limit = meta.per_page
       }
       return { success: true, data }
     } catch (err) {
